@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>BioHack</title>
+        <style>
+        	body {
+        		background-color: #282828;
+        		text-align: center;
+        		overflow-y: hidden;
+        	}
+              .form-group {
+
+                padding: 2vh;
+              	width:95%;
+              	text-align: center;
+              	color: azure;
+              	font-size: 20px;
+              	}
+              .first, .second {
+              	display: flex;
+              	padding: 10px;
+              	justify-content: space-around;
+              }
+              .result {
+                  text-align: center;
+                  font-size: 50px;
+                  color: azure;
+              }
+              .data {
+              	text-align: center;
+              }
+
+              .form-style{
+              	padding-top: 10vh;
+              	display: flex;
+              	text-align: center;
+              	align-items: center;
+              	justify-content: center;
+              }
+
+              #pad {
+              	height: 200px;
+              	width: 80vh;
+              }
+
+              .form-submit {
+              	margin-top: 15px;
+
+              }
+
+              h2 {
+              	text-align: center;
+              	color: azure;
+              	font-size: 60px;
+              }
+             
+        	        </style>
+    </head>
+	<body>
+		
+		  <div class = "data">
+          <form method="POST" action="{{url_for('home')}}" class = "form-style">
+          	{{form.hidden_tag()}}
+            
+          	<fieldset class="form-group">
+          		<h2>Data Input</h2>
+          		<div class = "first">
+          		<div class = "form-group" id = "pad">
+          			{{form.gender.label(class="form-control-label")}}
+          			{{ form.gender(class="form-control form-control-lg") }}
+          		</div>
+          		 <div class = "form-group" id = "pad">
+          			{{form.urea.label(class="form-control-label")}}
+          			{{ form.urea(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.cr.label(class="form-control-label")}}
+          			{{ form.cr(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.hba1c.label(class="form-control-label")}}
+          			{{ form.hba1c(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.chol.label(class="form-control-label")}}
+          			{{ form.chol(class="form-control form-control-lg") }}
+          		</div>
+          		  <div class = "form-group" id = "pad">
+                {{form.age.label(class="form-control-label")}}
+                {{ form.age(class="form-control form-control-lg") }}
+              </div>
+          	</div>
+          	<div class = "second">
+          		<div class = "form-group" id = "pad" >
+          			{{form.tg.label(class="form-control-label")}}
+          			{{ form.tg(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.hdl.label(class="form-control-label")}}
+          			{{ form.hdl(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.ldl.label(class="form-control-label")}}
+          			{{ form.ldl(class="form-control form-control-lg") }}
+          		</div>
+          		<div class = "form-group" id = "pad">
+          			{{form.vldl.label(class="form-control-label")}}
+          			{{ form.vldl(class="form-control form-control-lg") }}
+          		</div>
+          		 <div class = "form-group" id = "pad">
+          			{{form.bmi.label(class="form-control-label")}}
+          			{{ form.bmi(class="form-control form-control-lg") }}
+          		</div>
+
+          		</div>
+          		<div class = "form-submit">
+          			{{form.submit(class="btn btn-dark")}}
+          		</div>
+          	
+          	</fieldset>
+         
+          </form>
+      </div>
+      <div class = "result">
+      	 {{prediction}}
+      </div>
+	</body>
+</html>
